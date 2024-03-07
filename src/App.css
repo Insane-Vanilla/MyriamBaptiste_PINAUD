@@ -1,0 +1,15 @@
+html {
+  background-color: #f7f1e5;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+}
+
+
+.logo {
+  display: block;
+  margin: auto;
+  width: 40%;
+}
