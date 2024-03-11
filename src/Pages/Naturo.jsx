@@ -5,7 +5,7 @@ import Healthy from '../Style/Photos/healthy.jpg';
 
 const Naturo = () => {
   return (
-    <Paper elevation={3}>
+    <Paper elevation={0}>
       <h1>La naturopathie, ou comment prendre soin de vous autrement</h1>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, quam. Quaerat pariatur iure in dolores ipsam 
         suscipit at deleniti a nihil. Maxime, natus quaerat! Quis neque praesentium ipsum debitis odit!</p>

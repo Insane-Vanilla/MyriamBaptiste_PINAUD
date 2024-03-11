@@ -1,15 +1,19 @@
-html {
-  background-color: #f7f1e5;
-}
-
 .App {
   height: 100%;
   width: 100%;
+  background-color:#f7f1e5;
 }
-
 
 .logo {
   display: block;
   margin: auto;
-  width: 40%;
+  width: 30%;
+}
+
+.menu:hover {
+  background-color: #c6b672 ;
+}
+
+.woman {
+  margin:auto
 }

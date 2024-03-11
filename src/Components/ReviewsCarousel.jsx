@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import '../Style/CSS/Carousel.css';
 import ReviewImage from "../Style/Images/review.png";
+import { Typography } from '@mui/material';
 
 function ReviewsCarousel() {
     const datas = [
@@ -27,9 +28,12 @@ function ReviewsCarousel() {
         {datas.map((slide) =>(
             <div key={slide.id}>
                 <img src={ReviewImage} alt="review"/>
+
+                <Typography className='overlay'></Typography> 
+
                 <div className='overlay'>
-                    <h2 className='overlay-title'>{slide.title}</h2>
-                    <p className='overlay-text'>{slide.text}</p>
+                    <Typography sx={{textAlign:"right"}}className='overlay-title'>{slide.title}</Typography> 
+                    <Typography sx={{textAlign:"right"}}className='overlay-text'>{slide.text}</Typography> 
                 </div>
                 
             </div>

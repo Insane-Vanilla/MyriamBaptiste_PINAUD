@@ -12,12 +12,13 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
+import '../App.css';
 
 
 const drawerWidth = 240;
 const navItems = ['Qui suis-je ?', 'La naturopathie', 'Mes accompagnements', 'Contact'];
 
-function DrawerAppBar(props) {
+function NavBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -26,13 +27,13 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box sx={{textAlign: 'center', bgcolor:'primary.main'}} onClick={handleDrawerToggle} >
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item}>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText variant="h2" primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -45,27 +46,27 @@ function DrawerAppBar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box >
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar elevation={0} position="sticky" component="nav">
         <Toolbar>
           <IconButton
-            color="inherit"
+            color="secondary"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
-            <MenuIcon />
+            <MenuIcon color="secondary" />
           </IconButton>
 
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box margin='auto' sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button hover className="menu" variant="text" key={item} sx={{ color :"secondary.dark", fontSize:"1.2rem", ml:5}}>
                 {item}
               </Button>
             ))}
-            <Button size="large" variant="contained">Connexion</Button>
+            <Button sx={{ml:10}}size="large" variant="contained">Connexion</Button>
           </Box>
           
         </Toolbar>
@@ -80,7 +81,7 @@ function DrawerAppBar(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            boxShadows: 'none', display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
@@ -94,4 +95,4 @@ function DrawerAppBar(props) {
   );
 }
 
-export default DrawerAppBar;
+export default NavBar;

@@ -9,10 +9,13 @@ import Linkedin from '../Style/Icons/linkedin.png';
 import Fena from '../Style/Icons/fena.png';
 import Omnes from '../Style/Icons/omnes.png';
 import { Link } from 'react-router-dom';
+import Divider from '@mui/material/Divider';
+
 
 function Footer() {
     return (
-        <Paper sx={{marginTop: 'calc(10% +60px)', position: 'sticky', bottom: 0, width:'100%'}} component="footer">
+        <Paper elevation={0} sx={{bgcolor:"primary.main", color:"secondary.dark", marginTop: 'calc(10% +60px)', position: 'sticky', bottom: 0, width:'100%'}} component="footer">
+            <Divider sx={{color:'secondary.dark'}}/>
             <Container maxWidth="lg">
                 <Box sx={{flexGrow:1, justifyContent:"center", display: "flex", my:1}}>
                     <Typography>

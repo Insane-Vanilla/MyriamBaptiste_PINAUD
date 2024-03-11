@@ -4,7 +4,7 @@ import NaturoCard from '../Components/Card';
 
 const Services = () => {
   return (
-    <Paper elevation={3} display='grid'>
+    <Paper elevation={0} display='grid'>
       <h1>Mes accompagnements</h1>
       <NaturoCard></NaturoCard>
       <NaturoCard></NaturoCard>

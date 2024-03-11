@@ -1,6 +1,7 @@
 .carousel {
     margin:auto;
     width: 60%;
+    border-radius: 30px;
 }
 
 .carousel .overlay {
@@ -9,27 +10,22 @@
     top:50%;
     transform: translateY(-50%);
     left:10%;
-    padding: 0.4rem 1.5rem;
     text-align: left;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-}
-
-.carousel .thumbs {
-    display: flex;
-    justify-content: center;
-    margin : 0;
-    padding: 10px;
-}
-
-.carousel .thumb {
-    cursor:pointer;
-    margin: 0 5px;
+    color: #4C4B16;
 }
 
 .carousel .overlay-title {
-    margin: 0.8rem 0 1rem 0;
+    margin-right:50%;
 }
+
+.carousel .button {
+    background-color:#4C4B16;
+}
+
+.carousel .thumbs {
+    display: none;
+}
+
 
 @media screen and (max-width: 600px) {
     .carousel .slide img {
@@ -37,5 +33,5 @@
         height: 40vh;
         object-fit: cover;
     }
-};
+}
     
