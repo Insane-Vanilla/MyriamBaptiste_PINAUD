@@ -7,13 +7,165 @@
 .logo {
   display: block;
   margin: auto;
-  width: 30%;
+  width: 50%;
+}
+  @media screen and (min-width: 600px) {
+    .logo {
+        width: 30%;
+    }
+  }
+
+.logo:hover{
+  opacity: 0.8;
 }
 
-.menu:hover {
-  background-color: #c6b672 ;
+.menu:active{
+  text-decoration: none;
 }
+
+.menu:visited{
+  text-decoration: none ;
+}
+
+
+.illu3, .illu7, .illu5, .illu6, .illu8{
+  display: block;
+  margin: auto;
+  width: 50%;
+  }
+  @media screen and (min-width: 600px) {
+    .illu3, .illu7, .illu5, .illu6, .illu8 {
+        width: 30%;
+    }
+  }
+
+.illu9 {
+  display: block;
+  margin: auto;
+  width: 40%;
+    }
+  @media screen and (min-width: 600px) {
+    .illu9{
+        width: 25%;
+    }
+  }
 
 .woman {
   margin:auto
+}
+
+.healthy, .he, .zen, .rando, .harmony {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+  @media screen and (min-width: 600px) {
+    .healthy, .he, .zen, .rando, .harmony {
+        margin: auto;
+    }
+  }
+
+.formcontact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .MuiContainer body {
+  background-color: #f7f1e5;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.list {
+  list-style: none;
+}
+
+.colored{
+  color:#cc6200;
+  font-weight: bold;
+
+}
+
+/**CAROUSEL**/
+
+.carousel .overlay {
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  top:50%;
+  transform: translateY(-50%);
+  left:30%;
+  color: #4C4B16;
+}
+
+
+.carousel .button {
+  background-color:#4C4B16;
+}
+
+.carousel .thumbs {
+  display: none;
+}
+
+
+  @media screen and (max-width: 600px) {
+    .carousel {
+        width: 120 vw !important;
+        height: 40vh;
+        object-fit: cover;
+    }
+    .carousel .overlay{
+      height: 30vh;
+    }
+  }
+
+.review-image {
+  height: 200px;
+  width: 100px;
+}
+
+/**FOOTER**/
+
+.rs {
+  width: 10%;
+  margin: 2px;
+}
+  @media screen and (min-width: 600px) {
+    .rs {
+        width: 3%;
+        margin: 2px;
+
+    }
+  }
+
+.fena, .omnes {
+  width: 20%;
+  height: auto;
+}
+
+  @media screen and (min-width: 600px) {
+    .fena, .omnes {
+        width: 10%;
+    }
+  }
+
+
+
+
+/**ADMIN**/
+
+.logo-admin {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+  
+.logo-admin:hover{
+  opacity: 0.8;
 }
