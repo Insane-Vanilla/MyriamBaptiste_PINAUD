@@ -179,8 +179,8 @@ function SideBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Link to='/admin' style={{textDecoration:'none',color:"primary.dark", '&:visited': {color: 'primary.dark' }}}>
-            <Typography variant="h2" noWrap>Espace Administrateur</Typography>
+          <Link to='/admin' style={{textDecoration:'none'}}>
+            <Typography variant="h1" sx={{color:"primary.dark"}} noWrap>Espace Administrateur</Typography>
           </Link>
         </Toolbar>
       </AppBar>

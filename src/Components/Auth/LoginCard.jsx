@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useContext } from 'react';
+import { useState } from 'react';
 import Woman from '../../Style/Photos/woman.jpg';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,33 +8,27 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Avatar } from '@mui/material';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import app from "../../Firebase";
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../Context/AuthContext';
+import { useAuth } from '../../Context/AuthContext';
+import Alert from '@mui/material/Alert';
 
 function LoginCard() {
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const {logIn} = useAuth();
   const navigate= useNavigate();
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    signInWithEmailAndPassword(app, email, password)
-      .then((data) => {
-        console.log(data);
-        navigate("/admin/dashboard");
-      })
-      .catch((error) => {
-        alert(error.code);
-      });
+    setError("");
+    try {
+      await logIn(email, password);
+      navigate ("/admin/dashboard");
+    } catch (error) {
+      setError(error.message);
+    }
   };
-
-  const { currentUser} = useContext(AuthContext);
-  if(currentUser) {
-    return navigate("/");
-  }
 
   return (
       <Container sx={{bgcolor:"primary.main"}} component="main" maxWidth="xs">
@@ -51,11 +45,11 @@ function LoginCard() {
           <Typography component="h1" variant="h5">
             Espace personnel
           </Typography>
-
+            {error && <Alert severity="warning">{error}</Alert>}
             <Box 
               component="form" 
               noValidate sx={{ mt: 1 }}
-              onSubmit={(e)=> handleSignIn(e)}
+              onSubmit={handleSignIn}
               >
 
               <TextField
@@ -68,6 +62,7 @@ function LoginCard() {
                 autoComplete="email"
                 autoFocus
                 color="secondary"
+                onChange={(e) => setEmail(e.target.value)}
               />
 
               <TextField
@@ -80,14 +75,15 @@ function LoginCard() {
                 id="password"
                 autoComplete="current-password"
                 color="secondary"
+                onChange={(e) => setPassword(e.target.value)}
               />
 
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{bgcolor:"primary.light", color:"primary.main", mt: 3, mb: 2, ml:0, '&:hover': {backgroundColor: 'secondary.main' }}}
-                //onClick={handleSignIn}
+                sx={{bgcolor:"primary.light", color:"primary.main", mt: 3, mb: 2, ml:0,
+                '&:hover': {backgroundColor: 'secondary.main' }}}
                 >
                 Connexion
               </Button>

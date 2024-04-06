@@ -6,7 +6,8 @@ import PublicRouter from "./Pages/Public/PublicRouter";
 import AdminRouter from './Pages/Admin/AdminRouter';
 import AuthRouter from './Pages/Auth/AuthRouter';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
-import PrivateRoute from "./Components/Auth/PrivateRoute";
+import ProtectedRoute from "./Components/Auth/ProtectedRoute";
+import { AuthContextProvider } from './Context/AuthContext';
 
 
 function App() {
@@ -15,12 +16,17 @@ function App() {
       <div className="App">
         <ThemeProvider theme={MyTheme}>
           <BrowserRouter>
-            <Routes>
-              <Route path="/*" element={<PublicRouter/>}/>
-              <Route path="/login" element={<AuthRouter/>}/>
-              <Route path="/admin/*" element={<AdminRouter/>}>
-              </Route>
-            </Routes>
+            <AuthContextProvider>
+              <Routes>
+                <Route path="/*" element={<PublicRouter/>}/>
+                <Route path="/login/*" element={<AuthRouter/>}/>
+                <Route path="/admin/*" element={
+                  <ProtectedRoute>
+                    <AdminRouter/>
+                  </ProtectedRoute>}>
+                </Route>
+              </Routes>
+              </AuthContextProvider>
           </BrowserRouter>
         </ThemeProvider>
       </div>

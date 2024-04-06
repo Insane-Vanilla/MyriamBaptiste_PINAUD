@@ -1,0 +1,2 @@
+# Proxy to the API:
+http://localhost/api_myriambaptiste/*  https://pinaud.alwaysdata.net/:splat    200

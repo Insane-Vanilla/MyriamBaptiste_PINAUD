@@ -3,11 +3,19 @@ import FormContact from '../../Components/Public/Formcontact';
 import { Box, Paper, Typography } from '@mui/material';
 import zen from '../../Style/Photos/zen.jpg';
 import illu8 from '../../Style/Images/illu8.png';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
   return (
     <Box>
-      <Paper sx={{bgcolor:"primary.main", pl:"20%", pr:"20%", pb:"10%"}}>
+      <Helmet>
+        <title>Contactez-moi</title>
+        <meta name="description" content="Téléphone: 0620085320, Adresse de mon cabinet: 12 avenue Marie Reynoard
+        38100 GRENOBLE."/>
+        <link rel="canonical" href="/contact"/>
+      </Helmet>
+
+      <Paper sx={{bgcolor:"primary.main", pl:{xs:"5%", md:"15%"}, pr:{xs:"5%", md:"15%"}, pb:{xs:"5%", md:"10%"}}} elevation={0}>
         <Typography sx={{textAlign:"center", color:"secondary.dark"}}variant="h1">Me contacter</Typography>
         <br />
         <Typography sx={{textAlign:"center", color:"secondary.dark"}}variant="body1">Pour toute information, ou prise de rendez-vous, n'hésitez pas à me contacter !</Typography>

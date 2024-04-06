@@ -23,18 +23,18 @@ function FormContact() {
       .catch(err =>alert(err))
   }
 
-
   return (
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '50ch' },
+        '& .MuiTextField-root': { m: 1, width: {xs:'40ch', md:'50ch'}},
         display:"flex",
-        flexDirection:"column"
+        flexDirection:"column",
       }}
       noValidate
       autoComplete="off"
       onSubmit={handleSubmit}
+
     >
       <div className='formcontact'>
         <TextField

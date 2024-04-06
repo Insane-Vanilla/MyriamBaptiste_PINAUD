@@ -1,7 +1,8 @@
 import * as React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { styled } from '@mui/material/styles';
+import { styled} from '@mui/material/styles';
+import { Container } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -25,6 +26,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+
 function NaturoCard() {
   
   const [expanded, setExpanded] = React.useState(false);
@@ -41,15 +43,20 @@ function NaturoCard() {
   };
 
   return (
-        <div>
+      <Container sx={{display:'flex', flexDirection:"row", flexWrap:"wrap"}}>
 
           {data.map(d => (
             
-          <Card sx={{ minWidth: 300, maxWidth: 300, m:0.5 }} elevation={0}>
+          <Card 
+            sx={{ minWidth: {md:300}, maxWidth: {md:520}, m:1 }} 
+            elevation={0}
+            key={d.id}
+            >
             <CardHeader
               avatar={<Avatar className='woman' src={Woman} alt="myriambaptiste"/>}
               title={d.title}
-              sx={{color:"secondary.light"}}
+              sx={{color:"primary.dark"}}
+              subheader={d.category}
             />
             <CardMedia
               component="img"
@@ -84,7 +91,7 @@ function NaturoCard() {
             </Collapse>
           </Card>
           ))}
-      </div>
+      </Container>
   )
 }
 

@@ -1,21 +1,29 @@
 import React from 'react';
 import Paper from '@mui/material/Paper';
 import NaturoCard from '../../Components/Public/NaturoCard';
-import { Box, Typography} from '@mui/material';
+import { Box, Typography, Container} from '@mui/material';
 import illu7 from '../../Style/Images/illu7.png';
 import rando from '../../Style/Photos/rando.jpg';
 import PaymentMethods from '../../Components/Public/PaymentMethods';
+import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
   
   return (
     <Box>
-      <Paper sx={{bgcolor:"primary.main", pl:"15%", pr:"15%", pb:"10%"}}>
+      <Helmet>
+        <title>Mes accompagnements</title>
+        <meta name="description" content="Bilan naturopathie, bilan vitalité, équilibre global, nutrition
+        techniques manuelles, réflexologie plantaire."/>
+        <link rel="canonical" href="/services"/>
+      </Helmet>
+
+      <Paper sx={{bgcolor:"primary.main", pl:{xs:"5%", md:"15%"}, pr:{xs:"5%", md:"15%"}, pb:{xs:"5%", md:"10%"}}} elevation={0}>
         <Typography sx={{textAlign:"center", color:"secondary.dark"}} variant="h1">Mes accompagnements</Typography>
         <br />
-        <Box sx={{display:'flex', flexDirection:"row"}}>
+        <Container>
           <NaturoCard/>
-        </Box>
+        </Container>
         <br />
         <Box sx={{border:1, borderColor:"primary.light", borderRadius:2}}>
             <Typography sx={{textAlign:"justify", color:"primary.dark", mx:"2%", my:"2%"}} variant="h6"> 

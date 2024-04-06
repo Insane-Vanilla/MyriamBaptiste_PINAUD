@@ -2,11 +2,19 @@ import React from 'react';
 import { Paper,Typography, Box } from '@mui/material';
 import illu3 from "../../Style/Images/illu3.png";
 import harmony from "../../Style/Photos/harmony.jpg"
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
   return (
     <Box>
-      <Paper sx={{bgcolor:"primary.main", pl:"15%", pr:"15%", pb:"10%"}} elevation={0}>
+      <Helmet>
+        <title>Bienvenue sur mon site Myriam Baptiste Naturopathe</title>
+        <meta name="description" content="Naturopathe engagée et passionnée, j'aurai à coeur de vous guider vers une nouvelle vitalité, 
+          un équilibre durable, et un bien-être retrouvé."/>
+        <link rel="canonical" href="/"/>
+      </Helmet>
+
+      <Paper sx={{bgcolor:"primary.main", pl:{xs:"5%", md:"15%"}, pr:{xs:"5%", md:"15%"}, pb:{xs:"5%", md:"10%"}}}  elevation={0}>
         <Box sx={{mx:"10%"}}>
         <Typography sx={{textAlign:"center", color:"secondary.dark"}} variant="h1">Bienvenue</Typography>
         <br />

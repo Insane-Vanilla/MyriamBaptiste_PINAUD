@@ -16,7 +16,7 @@ const Naturo = () => {
         <link rel="canonical" href="/naturopathie"/>
       </Helmet>
 
-      <Paper sx={{bgcolor:"primary.main", pl:"20%", pr:"20%", pb:"10%"}} elevation={0}>
+      <Paper sx={{bgcolor:"primary.main", pl:{xs:"5%", md:"15%"}, pr:{xs:"5%", md:"15%"}, pb:{xs:"5%", md:"10%"}}} elevation={0}>
         <Typography sx={{textAlign:"center", color:"secondary.dark"}} variant="h1">
             La naturopathie, ou comment prendre soin de vous autrement
         </Typography>

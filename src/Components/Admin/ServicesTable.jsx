@@ -50,6 +50,7 @@ function ServicesTable() {
           {data.map((d) => (
             <TableRow
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              key={d.id}
             >
                 <TableCell component="th" scope="row">{d.id}</TableCell>
                 <TableCell align="justify" sx={{fontSize:"1rem"}}>{d.category}</TableCell>
